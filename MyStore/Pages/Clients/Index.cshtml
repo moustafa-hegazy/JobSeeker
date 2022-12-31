@@ -1,0 +1,35 @@
+﻿@page
+@model MyStore.Pages.Clients.IndexModel
+@{
+}
+<br />
+<h2> Browse Jobs </h2>
+<a class='apply btn' href='/Clients/apply'>APPLY</a>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Job ID</th>
+        <th>Job Title</th>
+        <th>Job Description</th>
+        <th>Job Location</th>
+        <th>Job Salary</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model.listClients)
+    {
+        <tr>
+            <td>@item.id</td>
+            <td>@item.title</td>
+            <td>@item.description</td>
+            <td>@item.location</td>
+            <td>@item.salary</td>
+            
+            <td>
+                <a class='apply btn' href="/Clients/Edit?id=@item.id">APPLY</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
